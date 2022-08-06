@@ -1,4 +1,4 @@
-const { Applicant, Sequelize } = require('../../../models/index');
+const { Applicant, Sequelize } = require('../../models/index');
 
 const defaultAttributes = ['nome', 'email', 'nascimento', 'telefone'];
 

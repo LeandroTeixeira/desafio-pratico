@@ -4,7 +4,7 @@ module.exports = {
   async up(queryInterface) {
     await queryInterface.bulkInsert('Applicants', [{
       nome: 'Fulano Beltrano de Oliveira da Silva',
-      email: 'fulanobos@gmail.com',
+      email: '__fulanobos@gmail.com',
       nascimento: new Date(1995, 10, 13),
       telefone: '31996661111',
       createdAt: new Date(Date.now()),

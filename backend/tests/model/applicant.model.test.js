@@ -1,4 +1,4 @@
-const applicantModel = require('../src/model/applicant.model');
+const applicantModel = require('../../src/model/applicant.model');
 const { sequelize } = require('../../models');
 /* eslint-disable no-undef */
 describe('Applicant Model', () => {

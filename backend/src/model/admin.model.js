@@ -1,5 +1,5 @@
 const { Op } = require('sequelize');
-const { Admin } = require('../../../models/index');
+const { Admin } = require('../../models/index');
 
 const defaultAttributes = ['email'];
 

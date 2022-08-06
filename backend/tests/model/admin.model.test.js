@@ -1,4 +1,4 @@
-const adminModel = require('../src/model/admin.model');
+const adminModel = require('../../src/model/admin.model');
 const { sequelize } = require('../../models');
 /* eslint-disable no-undef */
 describe('Admin Model', () => {
