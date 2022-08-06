@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run restore-test && jest --watchAll",
+    "test-coverage": "npm run restore-test && jest --watchAll --coverage",
+    "restore": "npx sequelize db:migrate:undo:all --env development && npx sequelize db:migrate --env development && npx sequelize db:seed:all --env development",
+    "restore-test": "npx sequelize db:migrate:undo:all && npx sequelize db:migrate && npx sequelize db:seed:all ",
+    "dev": "nodemon src/index.js",
+    "start": "npm run restore && node src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +20,10 @@
     "eslint-plugin-import": "^2.26.0"
   },
   "dependencies": {
+    "dotenv": "^16.0.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3",
+    "sequelize-cli": "^6.4.1",
     "sinon": "^14.0.0",
     "supertest": "^6.2.4"
   }
