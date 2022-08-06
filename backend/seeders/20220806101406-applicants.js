@@ -11,7 +11,7 @@ module.exports = {
       updatedAt: new Date(Date.now()),
     }], {});
 
-    if (process.env.NODE_ENV.match(/dev/)) {
+    if (process.env.NODE_ENV.match(/test/)) {
       await queryInterface.bulkInsert('Applicants', [{
         nome: 'Leandro Teixeira',
         email: 'leandroteixeira3@gmail.com',

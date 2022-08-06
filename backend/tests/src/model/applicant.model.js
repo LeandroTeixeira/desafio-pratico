@@ -1,7 +1,11 @@
 const { Applicant, Sequelize } = require('../../../models/index');
 
-async function getAllAplicants() {
-  const result = await Applicant.find({
+const defaultAttributes = ['nome', 'email', 'nascimento', 'telefone'];
+
+async function getAllApplicants() {
+  const result = await Applicant.findAll({
+    attributes: defaultAttributes,
+
     order: [
       ['createdAt', 'DESC'],
     ],
@@ -10,8 +14,8 @@ async function getAllAplicants() {
 }
 
 async function getApplicants(amount) {
-  const applicants = await getAllAplicants();
-  if (amount > 0 && amount <= applicants.length) return applicants.slice(0, amount);
+  const applicants = await getAllApplicants();
+  if (amount >= 0 && amount <= applicants.length) return applicants.slice(0, amount);
   return applicants;
 }
 
@@ -25,4 +29,4 @@ async function upsertApplicant(applicant) {
   return { applicant: newApplicant, message: 'Applicant succesfully updated.' };
 }
 
-module.exports = { getAllAplicants, getApplicants, upsertApplicant };
+module.exports = { getAllApplicants, getApplicants, upsertApplicant };
