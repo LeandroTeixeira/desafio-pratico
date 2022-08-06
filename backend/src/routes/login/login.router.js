@@ -7,7 +7,7 @@ class LoginRouter {
   router;
 
   constructor() {
-    this.loginController = new LoginController(this.getStockPrice);
+    this.loginController = new LoginController();
 
     this.router = express.Router();
     this.router.post('/', this.loginController.postLogin);

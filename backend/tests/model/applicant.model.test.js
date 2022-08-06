@@ -9,7 +9,7 @@ describe('Applicant Model', () => {
     const response = await applicantModel.getAllApplicants();
     expect(response.length).toBeGreaterThanOrEqual(2);
     expect(response[response.length - 2]).toHaveProperty('nome', 'Fulano Beltrano de Oliveira da Silva');
-    expect(response[response.length - 2]).toHaveProperty('email', 'fulanobos@gmail.com');
+    expect(response[response.length - 2]).toHaveProperty('email', '__fulanobos@gmail.com');
     expect(response[response.length - 2]).toHaveProperty('telefone', '31996661111');
     expect(response[response.length - 2]).toHaveProperty('nascimento');
   });
